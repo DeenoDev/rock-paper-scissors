@@ -72,3 +72,33 @@
     background: var(--dark-color);
   }
 
+  .choices{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+
+  }
+
+  .choice {
+    cursor: pointer;
+  }
+
+  .choice:hover{
+    color: var(--primary-color);
+  }
+
+  @media(max-width:700px){
+    .choice{
+        font-size: 110px;
+    }
+  }
+
+  @media(max-width:500px){
+    .choice{
+        font-size: 80px;
+    }
+  }
+
+
