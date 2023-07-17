@@ -89,6 +89,14 @@
     color: var(--primary-color);
   }
 
+  .text-win{
+    color: var(--win-color); 
+  }
+
+  .text-lose{
+    color: var(--lose-color); 
+  }
+
   @media(max-width:700px){
     .choice{
         font-size: 110px;
@@ -100,5 +108,7 @@
         font-size: 80px;
     }
   }
+
+  
 
 
