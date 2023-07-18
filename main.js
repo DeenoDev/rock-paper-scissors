@@ -91,6 +91,17 @@ function showWinner(winner, computerChoice) {
           modal.style.display = 'inline-block';
 }
 
+//Restart Game Function
+function restartGame(){
+    scoreboard.player = 0;
+    scoreboard.computer = 0;
+    score.innerHTML = `
+      <p>Player: 0</p>
+      <p>Computer: 0</p>
+    `;
+
+}
+
 //Clear Modal Function
 function clearModal(e) {
     if (e.target === modal){
@@ -102,4 +113,5 @@ function clearModal(e) {
 //Event listeners
 choices.forEach(choice => choice.addEventListener('click', play));
 window.addEventListener('click', clearModal);
+restart.addEventListener('click', restartGame);
 
