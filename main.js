@@ -67,20 +67,20 @@ function showWinner(winner, computerChoice) {
         //Show modal result
         result.innerHTML = `<h1 class="text-win">You Win</h1>
                             <i class="fas fa-hand-${computerChoice} fa-10x"></i>"
-                            <p>Computer chose <strong>${computerChoice}</strong></p>`;
+                            <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}</strong></p>`;
     } else if(winner === 'computer') {
         //Inc Computer Score
         scoreboard.computer++;
         //Show modal result
         result.innerHTML = `<h1 class="text-win">You Lose</h1>
                             <i class="fas fa-hand-${computerChoice} fa-10x"></i>
-                            <p>Computer chose <strong>${computerChoice}</strong></p>`;
+                            <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}</strong></p>`;
         
 
     } else {
         result.innerHTML = `<h1>It's A Draw</h1>
         <i class="fas fa-hand-${computerChoice} fa-10x"></i>"
-        <p>Computer chose <strong>${computerChoice}</strong></p>`;
+        <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}</strong></p>`;
     }
 
     //Show Score
@@ -95,11 +95,11 @@ function showWinner(winner, computerChoice) {
 function restartGame(){
     scoreboard.player = 0;
     scoreboard.computer = 0;
+    restart.style.display = 'none';
     score.innerHTML = `
       <p>Player: 0</p>
       <p>Computer: 0</p>
     `;
-
 }
 
 //Clear Modal Function
