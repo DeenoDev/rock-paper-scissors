@@ -73,7 +73,7 @@ function showWinner(winner, computerChoice) {
         scoreboard.computer++;
         //Show modal result
         result.innerHTML = `<h1 class="text-win">You Lose</h1>
-                            <i class="fas fa-hand-${computerChoice} fa-10x"></i>"
+                            <i class="fas fa-hand-${computerChoice} fa-10x"></i>
                             <p>Computer chose <strong>${computerChoice}</strong></p>`;
         
 
@@ -90,8 +90,16 @@ function showWinner(winner, computerChoice) {
 
           modal.style.display = 'inline-block';
 }
+
+//Clear Modal Function
+function clearModal(e) {
+    if (e.target === modal){
+        modal.style.display = 'none';
+    }
+}
     
 
 //Event listeners
 choices.forEach(choice => choice.addEventListener('click', play));
+window.addEventListener('click', clearModal);
 

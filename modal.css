@@ -3,6 +3,8 @@
   }
 
 
+
+
 .modal{
     display: none;
     position: fixed;
@@ -37,6 +39,7 @@
 .modal-content p{
     font-size: 1.2rem;
     margin-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 @keyframes modalopen {
