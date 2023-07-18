@@ -14,8 +14,9 @@ function play(e){
     const playerChoice = (e.target.id);
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
+    showWinner(winner, computerChoice);
 
-    console.log(playerChoice, computerChoice, winner);
+   
 }
 
 //Get computer choice
@@ -51,7 +52,7 @@ function getWinner(p, c){
         }
     } else if (p === 'scissors'){
         if(c === 'rock'){
-            return computer;
+            return 'computer';
         } else {
             return 'player';
         }
@@ -65,20 +66,20 @@ function showWinner(winner, computerChoice) {
         scoreboard.player++;
         //Show modal result
         result.innerHTML = `<h1 class="text-win">You Win</h1>
-                            <i class="fas fa fa-hand-${computerChoice} fa-10x></i>"
+                            <i class="fas fa-hand-${computerChoice} fa-10x"></i>"
                             <p>Computer chose <strong>${computerChoice}</strong></p>`;
     } else if(winner === 'computer') {
         //Inc Computer Score
         scoreboard.computer++;
         //Show modal result
         result.innerHTML = `<h1 class="text-win">You Lose</h1>
-                            <i class="fas fa fa-hand-${computerChoice} fa-10x></i>"
+                            <i class="fas fa-hand-${computerChoice} fa-10x"></i>"
                             <p>Computer chose <strong>${computerChoice}</strong></p>`;
         
 
     } else {
         result.innerHTML = `<h1>It's A Draw</h1>
-        <i class="fas fa fa-hand-${computerChoice} fa-10x></i>"
+        <i class="fas fa-hand-${computerChoice} fa-10x"></i>"
         <p>Computer chose <strong>${computerChoice}</strong></p>`;
     }
 
@@ -87,7 +88,7 @@ function showWinner(winner, computerChoice) {
           <p>Player: ${scoreboard.player}</p>
           <p>Computer: ${scoreboard.computer}</p>`;
 
-          modal.style.display = 'block';
+          modal.style.display = 'inline-block';
 }
     
 
