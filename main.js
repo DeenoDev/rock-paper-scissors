@@ -14,9 +14,8 @@ function play(e){
     const playerChoice = (e.target.id);
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
-    
-    
 
+    console.log(playerChoice, computerChoice, winner);
 }
 
 //Get computer choice
@@ -56,6 +55,33 @@ function getWinner(p, c){
         } else {
             return 'player';
         }
+    }
+
+}
+
+function showWinner(winner, computerChoice) {
+    if(winner === 'player'){
+        //Inc Player Score
+        scoreboard.player++;
+        //Show modal result
+        result.innerHTML = `<h1 class="text-win">You Win</h1>
+                            <i class="fas fa fa-hand-${computerChoice} fa-10x></i>"
+                            <p>Computer chose <strong>${computerChoice}</strong></p>`;
+    } else if(winner === 'computer') {
+        //Inc Computer Score
+        scoreboard.computer++;
+        //Show modal result
+        result.innerHTML = `<h1 class="text-win">You Lose</h1>
+                            <i class="fas fa fa-hand-${computerChoice} fa-10x></i>"
+                            <p>Computer chose <strong>${computerChoice}</strong></p>`;
+        
+
+    } else {
+        result.innerHTML = `<h1>It's A Draw</h1>
+        <i class="fas fa fa-hand-${computerChoice} fa-10x></i>"
+        <p>Computer chose <strong>${computerChoice}</strong></p>`;
+
+
     }
 
 }
