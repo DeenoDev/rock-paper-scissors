@@ -80,11 +80,16 @@ function showWinner(winner, computerChoice) {
         result.innerHTML = `<h1>It's A Draw</h1>
         <i class="fas fa fa-hand-${computerChoice} fa-10x></i>"
         <p>Computer chose <strong>${computerChoice}</strong></p>`;
-
-
     }
 
+    //Show Score
+    score.innerHTML = `
+          <p>Player: ${scoreboard.player}</p>
+          <p>Computer: ${scoreboard.computer}</p>`;
+
+          modal.style.display = 'block';
 }
+    
 
 //Event listeners
 choices.forEach(choice => choice.addEventListener('click', play));
